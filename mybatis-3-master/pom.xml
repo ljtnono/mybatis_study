@@ -8,7 +8,6 @@
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis-parent</artifactId>
         <version>32</version>
-        <relativePath/>
     </parent>
 
     <artifactId>mybatis</artifactId>

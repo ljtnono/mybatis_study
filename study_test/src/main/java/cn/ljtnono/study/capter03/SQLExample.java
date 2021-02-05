@@ -1,7 +1,6 @@
 package cn.ljtnono.study.capter03;
 
 import org.apache.ibatis.jdbc.SQL;
-import org.junit.Test;
 
 /**
  * @author Ling, Jiatong
@@ -9,13 +8,10 @@ import org.junit.Test;
  */
 public class SQLExample {
 
-
-    @Test
-    public void testInsertSql() {
+    public static void main(String[] args) {
         String insertSql = new SQL()
                 .INSERT_INTO("PERSON")
                 .VALUES("ID", "").toString();
         System.out.println(insertSql);
     }
-
 }
