@@ -22,14 +22,22 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.5.7-SNAPSHOT</version>
-            <optional>true</optional>
         </dependency>
 
+        <!-- 测试依赖 -->
+        <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
-            <scope>compile</scope>
+            <scope>test</scope>
+        </dependency>
+        <!-- h2 内存型数据库 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
