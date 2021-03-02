@@ -20,12 +20,15 @@ public class ScriptRunnerExample01 {
 
     @Test
     public void example01() throws SQLException, IOException {
-        DataSource dataSource = new UnpooledDataSource("jdbc:hsqldb:mem:mybatis", "jdbc:mysql://192.168.172.107:8013/xmirror_oss?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai", "root", "xxx");
+        DataSource dataSource = new UnpooledDataSource("org.h2.Driver", "jdbc:h2:mem:default;MODE=MSSQLServer;", "", "");
         // 获取连接
         Connection connection = dataSource.getConnection();
         ScriptRunner scriptRunner = new ScriptRunner(connection);
+        // 一次性插入
+        scriptRunner.setSendFullScript(true);
         // 执行SQL脚本
-        scriptRunner.runScript(Resources.getResourceAsReader("create_table.sql"));
+        scriptRunner.runScript(Resources.getResourceAsReader("capter03/create_table.sql"));
+        scriptRunner.runScript(Resources.getResourceAsReader("capter03/insert_data.sql"));
     }
 
 }
